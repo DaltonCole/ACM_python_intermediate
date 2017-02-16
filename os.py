@@ -7,6 +7,20 @@ os.chdir('..')
 print(os.getcwd())
 os.chdir('./ACM_python_intermediate/')
 
+# Run a command
+ls = os.system('ls')
+print(ls)
+
+# Subprocess
+import subprocess
+proc = subprocess.run(['ls', '-al']) # subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None, shell=False, timeout=None, check=False)
+print(proc)
+proc = subprocess.run(['python', 'bitwise.py'])
+print(proc)
+proc = subprocess.Popen(['python', 'helper_os.py'], stdin=subprocess.PIPE)
+proc.communicate(input=b'This will be printed\n')
+
+
 # Wild card
 import glob
 print(glob.glob('*.txt'))
@@ -41,7 +55,7 @@ with urlopen('http://daltonrussellcole.com') as response:
 print(html)
 
 # Email
-
+'''
 import smtplib
 fromaddr = 'darcnessmatters.not@gmail.com'
 toaddrs  = 'drcgy5@mst.edu'
@@ -60,7 +74,7 @@ server.starttls()
 server.login(username,password)
 server.sendmail(fromaddr, toaddrs, msg)
 server.quit()
-
+'''
 
 # Date time
 from datetime import date
